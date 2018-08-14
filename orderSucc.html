@@ -176,16 +176,37 @@
 <footer>开始健身</footer>
 <script src="js/jQuery.js"></script>
 <script>
+    function getdata() {
+        if (localStorage.data) {
+            return JSON.parse(localStorage.data)
+        }
+        else {
+            return [];
+        }
+    }
+
+    function setdata(data) {
+        localStorage.data = JSON.stringify(data);
+    }
+
     let arr1 = Math.round(Math.random() * 9);
     let arr2 = Math.round(Math.random() * 9);
     let arr3 = Math.round(Math.random() * 9);
     let arr4 = Math.round(Math.random() * 9);
     let arr5 = Math.round(Math.random() * 9);
-    document.getElementById("ran1").value = arr1;
-    document.getElementById("ran2").value = arr2;
-    document.getElementById("ran3").value = arr3;
-    document.getElementById("ran4").value = arr4;
-    document.getElementById("ran5").value = arr5;
+
+    function render() {
+        let data = getdata();
+        data.push([arr1, arr2, arr3, arr4, arr5]);
+        setdata(data);
+    }
+    render();
+    data=JSON.parse(localStorage.data);
+    document.getElementById("ran1").value = data[0][0];
+    document.getElementById("ran2").value = data[0][1];
+    document.getElementById("ran3").value = data[0][2];
+    document.getElementById("ran4").value = data[0][3];
+    document.getElementById("ran5").value = data[0][4];
 </script>
 </body>
 </html>

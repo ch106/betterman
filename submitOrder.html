@@ -92,6 +92,15 @@
             width: 4.2rem;
         }
 
+        main .price {
+            width: .47rem;
+            display: block;
+            float: left;
+            margin-left: .19rem;
+            text-align: center;
+            letter-spacing: .04rem;
+        }
+
         main p {
             float: left;
         }
@@ -116,6 +125,10 @@
             text-align: center;
             margin-left: .15rem;
             margin-top: .05rem;
+        }
+
+        .howLong #time {
+            /*display: none;*/
         }
 
         .one, .two, .three {
@@ -178,20 +191,23 @@
     <div class="orderTime">
         <p>预约时长：</p>
         <div class="howLong">
-            <div class="thirty"><a class="time1">30</a>分钟</div>
-            <div class="sixty active"><a class="time2">60分钟</a></div>
-            <div class="ninety"><a class="time3">90分钟</a></div>
+            <div class="thirty"><span class="time1">30</span>分钟</div>
+            <div class="sixty active"><span class="time2">60</span>分钟</div>
+            <div class="ninety"><span class="time3">90</span>分钟</div>
+            <span id="time">60</span>
         </div>
     </div>
     <div class="orderNum">
         <p>预约人次：</p>
         <div class="number">
-            <div class="one active"><a class="num1">1</a>人</div>
-            <div class="two"><a class="num2">2</a>人</div>
-            <div class="three"><a class="num3">3</a>人</div>
+            <div class="one active"><span class="num1">1</span>人</div>
+            <div class="two"><span class="num2">2</span>人</div>
+            <div class="three"><span class="num3">3</span>人</div>
+            <span id="num">1</span>
         </div>
     </div>
-    <p class="price-t">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</p><input class="price" value=" 3 0元" id="price"><br>
+    <p class="price-t">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</p>
+    <span class="price">9.9</span>元
 </main>
 <p class="copyright">本产品最终解释权归组合式自助健身舱所有，有问题请咨询：18035237390</p>
 <a href="orderSucc.html">
@@ -199,49 +215,44 @@
 </a>
 <script src="js/jQuery.js"></script>
 <script>
-    var time=0;
-    var num=0;
-    function culTime(){
-        $(".time1").click(function () {
-            $(".howLong div").removeClass("active");
-            $(".thirty").toggleClass("active");
-            time = 30;
-        });
-        $(".time2").click(function () {
-            $(".howLong div").removeClass("active");
-            $(".sixty").toggleClass("active");
-            time = 60;
-        });
-        $(".time3").click(function () {
-            $(".howLong div").removeClass("active");
-            $(".ninety").toggleClass("active");
-            time = 90;
-        });
-        return time;
-    }
-    time=culTime();
-    function culNumber(){
-        $(".num1").click(function () {
-            $(".number div").removeClass("active");
-            $(".one").toggleClass("active");
-            num=1;
-        });
-        $(".num2").click(function () {
-            $(".number div").removeClass("active");
-            $(".two").toggleClass("active");
-            num=2;
-        });
-        $(".num3").click(function () {
-            $(".number div").removeClass("active");
-            $(".three").toggleClass("active");
-            num=3;
-        });
-        return num;
-    }
-    time=culTime();
-    num=culNumber();
-    var price=time/60*num*9.9;
-    document.getElementById("price").value=price;
+    var time = 0;
+    var num = 0;
+    $(".time1").click(function () {
+        $(".howLong div").removeClass("active");
+        $(".thirty").toggleClass("active");
+        $("#time").text(30);
+    });
+    $(".time2").click(function () {
+        $(".howLong div").removeClass("active");
+        $(".sixty").toggleClass("active");
+        $("#time").text(60);
+    });
+    $(".time3").click(function () {
+        $(".howLong div").removeClass("active");
+        $(".ninety").toggleClass("active");
+        $("#time").text(90);
+    });
+    $(".num1").click(function () {
+        $(".number div").removeClass("active");
+        $(".one").toggleClass("active");
+        $("#num").text(1);
+    });
+    $(".num2").click(function () {
+        $(".number div").removeClass("active");
+        $(".two").toggleClass("active");
+        $("#num").text(2);
+    });
+    $(".num3").click(function () {
+        $(".number div").removeClass("active");
+        $(".three").toggleClass("active");
+        $("#num").text(3);
+    });
+    // console.log($("#time").text());
+    time=$("#time").text();
+    num=$("#num").text();
+    var price = time / 60 * num * 9.9;
+    $(".price").text(price);
+    // document.getElementById("price").value=price;
 </script>
 </body>
 </html>
