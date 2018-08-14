@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/rem.css">
+    <title>百特美健身</title>
+    <style>
+        body {
+            background: #2d2d2d;
+        }
+
+        header {
+            width: 100%;
+            height: .49rem;
+            background: #b60742;
+        }
+
+        header .left-text {
+            width: 1.98rem;
+            font-size: .26rem;
+            margin-left: .28rem;
+            line-height: .49rem;
+            color: #fff;
+            float: left;
+        }
+
+        header .right-text {
+            width: .85rem;
+            height: .48rem;
+            font-size: .27rem;
+            padding-left: .23rem;
+            line-height: .50rem;
+            color: #fff;
+            float: right;
+            background: #da0363;
+        }
+
+        main {
+            width: 4.99rem;
+            margin: .1rem auto;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        main li {
+            width: 100%;
+            height: 1.98rem;
+        }
+
+        li:nth-child(1) {
+            border-bottom: 1px solid #464646;
+        }
+
+        li:nth-child(2) {
+            border-bottom: 1px solid #464646;
+        }
+
+        li img {
+            width: 2.16rem;
+            height: 1.34rem;
+            display: block;
+            float: left;
+            margin-top: .30rem;
+            margin-right: .23rem;
+        }
+
+        li .right {
+            float: left;
+            width: 2.59rem;
+            height: 1.34rem;
+        }
+
+        li .title {
+            font-size: .19rem;
+            color: #fff;
+            margin-top: .27rem;
+        }
+
+        li .description {
+            width: 2.51rem;
+            font-size: .15rem;
+            color: #8c8c8c;
+        }
+
+        li .btn-items {
+            height: .38rem;
+            font-size: .20rem;
+            margin-top: .11rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .btn-items .btn {
+            width: 1.24rem;
+            height: .38rem;
+            line-height: .38rem;
+            border-radius: .08rem;
+            border: 0;
+            color: #fff;
+        }
+
+        .btn-items .btn:nth-child(1) {
+            background: #b60742;
+        }
+
+        .btn-items .btn:nth-child(2) {
+            background: #f0c500;
+            color: #000;
+        }
+
+        .footer {
+            width: 100%;
+            height: .59rem;
+            background: #1d1d1f;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .tab {
+            width: .86rem;
+            height: .42rem;
+            border-radius: 0.08rem;
+            color: #f8f8f8;
+            font-size: .22rem;
+            line-height: .44rem;
+            text-align: center;
+            float: left;
+            margin: .08rem .25rem .09rem .21rem;
+        }
+
+        .active {
+            background: #b60742;
+        }
+
+        .tab-line {
+            width: .01rem;
+            height: .32rem;
+            background: #4b4b4b;
+            float: left;
+            margin-top: .13rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="left-text">您收藏了3个舱体</div>
+    <div class="right-text">编辑</div>
+</header>
+<main>
+    <ul>
+        <li>
+            <img src="images/house3.jpg" alt="">
+            <div class="right">
+                <div class="title">304田园试点健身舱</div>
+                <div class="description" style="text-indent:2em;">内部设备：跑步机、动感单车、划船器等，主要以力量训练和抗阻训练为主。</div>
+                <div class="btn-items">
+                    <input type="button" value="立即健身" class="btn">
+                    <input type="button" value="查看详细" class="btn">
+                </div>
+            </div>
+        </li>
+        <li>
+            <img src="images/house2.jpg" alt="">
+            <div class="right">
+                <div class="title">304田园试点健身舱</div>
+                <div class="description" style="text-indent:2em;">内部设备：跑步机、动感单车、划船器等，主要以力量训练和抗阻训练为主。</div>
+                <div class="btn-items">
+                    <input type="button" value="立即健身" class="btn">
+                    <input type="button" value="查看详细" class="btn">
+                </div>
+            </div>
+        </li>
+        <li>
+            <img src="images/house1.jpg" alt="">
+            <div class="right">
+                <div class="title">304田园试点健身舱</div>
+                <div class="description" style="text-indent:2em;">内部设备：跑步机、动感单车、划船器等，主要以力量训练和抗阻训练为主。</div>
+                <div class="btn-items">
+                    <input type="button" value="立即健身" class="btn">
+                    <input type="button" value="查看详细" class="btn">
+                </div>
+            </div>
+        </li>
+    </ul>
+</main>
+<div class="footer">
+    <div class="tab active">健身</div>
+    <div class="tab-line"></div>
+    <div class="tab">推荐</div>
+    <div class="tab-line"></div>
+    <div class="tab">合作</div>
+    <div class="tab-line"></div>
+    <div class="tab">账户</div>
+</div>
+<script>
+    let tab = document.querySelectorAll(".tab");
+    for (let i = 0; i < tab.length; i++) {
+        tab[i].onclick = function () {
+            for (let j = 0; j < tab.length; j++) {
+                tab[j].classList.remove("active");
+            }
+            tab[i].classList.add("active");
+        }
+    }
+</script>
+</body>
+</html>

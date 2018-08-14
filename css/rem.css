@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: PingFangSC-Regular, sans-serif;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(320 / 537 * 100px);
+    }
+
+}
+
+@media screen and (min-width: 360px) {
+    html {
+        font-size: calc(360 / 537 * 100px);
+    }
+
+}
+
+@media screen and (min-width: 375px) {
+    html {
+        font-size: calc(375 / 537 * 100px);
+    }
+
+}
+
+@media screen and (min-width: 414px) {
+    html {
+        font-size: calc(414 / 537 * 100px);
+    }
+
+}
+input:focus{     /*去除焦点*/
+    outline:none;
+}

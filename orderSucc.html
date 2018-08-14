@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/rem.css">
+    <title>百特美健身</title>
+    <style>
+        body {
+            background: #2d2d2d;
+        }
+
+        header {
+            width: 100%;
+            height: 2.79rem;
+            padding: 1.6rem .4rem .49rem .74rem;
+            background: url("images/header_03.png") no-repeat center/100% auto;
+        }
+
+        header img {
+            width: .72rem;
+            height: .72rem;
+            display: block;
+            float: left;
+        }
+
+        header p {
+            float: left;
+            font-size: .32rem;
+            line-height: .72rem;
+            color: #fff;
+            margin-left: .28rem;
+            letter-spacing: .08rem;
+        }
+
+        .item {
+            width: 5.16rem;
+            margin: 0 auto;
+            background: #242424;
+            border-radius: .08rem;
+            font-size: .21rem;
+            color: #f4f4f4;
+        }
+
+        .item:nth-child(1) {
+            height: 1.92rem;
+        }
+
+        .item:nth-child(2) {
+            height: 2.6rem;
+            margin-top: .28rem;
+        }
+
+        .item input {
+            border: 0;
+        }
+
+        .item .title {
+            width: 100%;
+            height: .40rem;
+            background: #191919;
+        }
+
+        .item .description {
+            width: 100%;
+            height: .90rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: .29rem .55rem 0 .44rem;
+        }
+
+        .description .random {
+            width: .62rem;
+            height: .62rem;
+            background: #969696;
+            border-radius: .04rem;
+            color: #b60742;
+            text-align: center;
+            line-height: .62rem;
+            font-size: .41rem;
+            font-weight: 600;
+        }
+
+        .title img {
+            height: .28rem;
+            width: auto;
+            display: block;
+            float: left;
+            margin-left: .17rem;
+            margin-top: .06rem;
+        }
+
+        .title p {
+            float: left;
+            margin-top: .06rem;
+            margin-left: .09rem;
+            letter-spacing: .04rem;
+        }
+
+        .problem {
+            margin-left: .44rem;
+            margin-top: .2rem;
+            letter-spacing: .01rem;
+        }
+
+        .item a {
+            text-decoration: none;
+            color: #a2012f;
+            letter-spacing: .01rem;
+        }
+
+        ul {
+            padding-top: .13rem;
+        }
+
+        ul > li {
+            list-style: none;
+            font-size: .18rem;
+            color: #f4f4f4;
+            margin-left: .44rem;
+            line-height: .31rem;
+            letter-spacing: .01rem;
+        }
+
+        footer {
+            width: 100%;
+            height: .53rem;
+            background: #b60742;
+            color: #fff;
+            line-height: .53rem;
+            font-size: .27rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="images/succ-icon_03.png" alt="">
+    <p>恭喜您预约成功！</p>
+</header>
+<main>
+    <div class="item">
+        <div class="title">
+            <img src="images/orderSucc-icon_03.png" alt="">
+            <p>开舱密码</p>
+        </div>
+        <div class="description">
+            <input type="text" value=" " class="random" id="ran1">
+            <input type="text" value=" " class="random" id="ran2">
+            <input type="text" value=" " class="random" id="ran3">
+            <input type="text" value=" " class="random" id="ran4">
+            <input type="text" value=" " class="random" id="ran5">
+        </div>
+        <p class="problem">使用过程有问题？请<a href="#">[点我]</a></p>
+    </div>
+    <div class="item">
+        <div class="title">
+            <img src="images/orderSucc-icon_07.png" alt="">
+            <p>友情提示</p>
+        </div>
+        <ul>
+            <li>1、若在使用过程中遇到问题，请及时联系客服。</li>
+            <li>2、客服热线：18035237390。</li>
+            <li>3、使用前请扫码观看器械使用过程，谨防训练伤。</li>
+            <li>4、为保证您的服务质量，请提前进行预约。</li>
+            <li>5、请注意预约时间，不要迟到哦。</li>
+            <li>6、城市英雄期待您的到来。</li>
+        </ul>
+    </div>
+</main>
+<footer>开始健身</footer>
+<script src="js/jQuery.js"></script>
+<script>
+    let arr1 = Math.round(Math.random() * 9);
+    let arr2 = Math.round(Math.random() * 9);
+    let arr3 = Math.round(Math.random() * 9);
+    let arr4 = Math.round(Math.random() * 9);
+    let arr5 = Math.round(Math.random() * 9);
+    document.getElementById("ran1").value = arr1;
+    document.getElementById("ran2").value = arr2;
+    document.getElementById("ran3").value = arr3;
+    document.getElementById("ran4").value = arr4;
+    document.getElementById("ran5").value = arr5;
+</script>
+</body>
+</html>
