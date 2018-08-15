@@ -96,9 +96,10 @@
             width: .47rem;
             display: block;
             float: left;
-            margin-left: .19rem;
+            margin-left: .17rem;
+            margin-right: .2rem;
             text-align: center;
-            letter-spacing: .04rem;
+            letter-spacing: .02rem;
         }
 
         main p {
@@ -127,8 +128,9 @@
             margin-top: .05rem;
         }
 
-        .howLong #time {
+        .howLong #time,#num{
             /*display: none;*/
+            margin-left: .15rem;
         }
 
         .one, .two, .three {
@@ -191,68 +193,41 @@
     <div class="orderTime">
         <p>预约时长：</p>
         <div class="howLong">
-            <div class="thirty"><span class="time1">30</span>分钟</div>
-            <div class="sixty active"><span class="time2">60</span>分钟</div>
-            <div class="ninety"><span class="time3">90</span>分钟</div>
-            <span id="time">60</span>
+            <div :class="['thirty',{active:time===30}]"><span class="time1" @click="time=30">30</span>分钟</div>
+            <div :class="['sixty',{active:time===60}]"><span class="time2" @click="time=60">60</span>分钟</div>
+            <div :class="['ninety',{active:time===90}]"><span class="time3" @click="time=90">90</span>分钟</div>
         </div>
     </div>
     <div class="orderNum">
         <p>预约人次：</p>
         <div class="number">
-            <div class="one active"><span class="num1">1</span>人</div>
-            <div class="two"><span class="num2">2</span>人</div>
-            <div class="three"><span class="num3">3</span>人</div>
-            <span id="num">1</span>
+            <div :class="['one',{active:num===1}]"><span class="num1" @click="num=1">1</span>人</div>
+            <div :class="['two',{active:num===2}]"><span class="num2" @click="num=2">2</span>人</div>
+            <div :class="['three',{active:num===3}]"><span class="num3" @click="num=3">3</span>人</div>
         </div>
     </div>
     <p class="price-t">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</p>
-    <span class="price">9.9</span>元
+    <span class="price">{{getPrice()}}</span>元
 </main>
 <p class="copyright">本产品最终解释权归组合式自助健身舱所有，有问题请咨询：18035237390</p>
 <a href="orderSucc.html">
     <footer>提交订单</footer>
 </a>
-<script src="js/jQuery.js"></script>
+<script src="js/vue.js"></script>
 <script>
-    var time = 0;
-    var num = 0;
-    $(".time1").click(function () {
-        $(".howLong div").removeClass("active");
-        $(".thirty").toggleClass("active");
-        $("#time").text(30);
-    });
-    $(".time2").click(function () {
-        $(".howLong div").removeClass("active");
-        $(".sixty").toggleClass("active");
-        $("#time").text(60);
-    });
-    $(".time3").click(function () {
-        $(".howLong div").removeClass("active");
-        $(".ninety").toggleClass("active");
-        $("#time").text(90);
-    });
-    $(".num1").click(function () {
-        $(".number div").removeClass("active");
-        $(".one").toggleClass("active");
-        $("#num").text(1);
-    });
-    $(".num2").click(function () {
-        $(".number div").removeClass("active");
-        $(".two").toggleClass("active");
-        $("#num").text(2);
-    });
-    $(".num3").click(function () {
-        $(".number div").removeClass("active");
-        $(".three").toggleClass("active");
-        $("#num").text(3);
-    });
-    // console.log($("#time").text());
-    time=$("#time").text();
-    num=$("#num").text();
-    var price = time / 60 * num * 9.9;
-    $(".price").text(price);
-    // document.getElementById("price").value=price;
+    new Vue({
+        el:"main",
+        data:{
+            num:1,
+            time:60,
+        },
+        methods:{
+            getPrice:function () {
+                let price=(this.num*(this.time/60)*9.9).toFixed(2);
+                return price;
+            }
+        }
+    })
 </script>
 </body>
 </html>
