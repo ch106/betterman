@@ -1,19 +1,21 @@
-<?php
+﻿<?php
+session_start();
 require("./weixin_oop.php");
-$redirect_url = "http://chua.applinzi.com/logo.php";
+$redirect_url = "http://chua.applinzi.com/index.php";
 $appid = "wx5f7e76a499956419";
 $appsecret = "22ef2d429456869644a5ad2f6f7addcd";
 $wx = new weixinapi($appid, $appsecret);
 $base = $wx->snsapi_base($redirect_url);
 $openid = $base['openid'];
-echo $openid;
+//echo $openid;
+$_SESSION['openid']= $openid;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <meta http-equiv="refresh" content="2;url=exercise.html"/>
+    <meta http-equiv="refresh" content="2;url=exercise.php"/>
     <title>百特美健身</title>
     <link rel="stylesheet" href="css/rem.css">
     <style type="text/css">
