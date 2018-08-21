@@ -1,8 +1,4 @@
-//<?php
-//session_start();
-////$openid = $_SESSION['openid'];
-////?>
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -201,7 +197,6 @@
     </style>
 </head>
 <body>
-<input type="text" value="<?php echo $openid; ?>">
 <div class="head">
     <div class="position dropdown">
         地区 <img src="images/arrow.png" alt="">
