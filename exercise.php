@@ -1,7 +1,7 @@
-<?php
-session_start();
-$openid = $_SESSION['openid'];
-?>
+//<?php
+//session_start();
+////$openid = $_SESSION['openid'];
+////?>
 <!doctype html>
 <html>
 <head>

@@ -1,15 +1,15 @@
-﻿<?php
-session_start();
-require("./weixin_oop.php");
-$redirect_url = "http://chua.applinzi.com/index.php";
-$appid = "wx5f7e76a499956419";
-$appsecret = "22ef2d429456869644a5ad2f6f7addcd";
-$wx = new weixinapi($appid, $appsecret);
-$base = $wx->snsapi_base($redirect_url);
-$openid = $base['openid'];
+//<?php
+//session_start();
+//require("./weixin_oop.php");
+//$redirect_url = "http://chua.applinzi.com/index.php";
+//$appid = "wx5f7e76a499956419";
+//$appsecret = "22ef2d429456869644a5ad2f6f7addcd";
+//$wx = new weixinapi($appid, $appsecret);
+//$base = $wx->snsapi_base($redirect_url);
+//$openid = $base['openid'];
 //echo $openid;
-$_SESSION['openid']= $openid;
-?>
+//$_SESSION['openid']= $openid;
+//?>
 <!DOCTYPE html>
 <html>
 <head>
